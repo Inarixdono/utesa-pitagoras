@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Pitagoras/1.0.0": {
+        "dependencies": {
+          "Yolk": "1.0.0"
+        },
+        "runtime": {
+          "Pitagoras.dll": {}
+        }
+      },
+      "Yolk/1.0.0": {
+        "runtime": {
+          "Yolk.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Pitagoras/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Yolk/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
