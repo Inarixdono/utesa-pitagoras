@@ -181,7 +181,7 @@ namespace Pitagoras
             Persona carmen = new Persona("Carmen", 40);
             Persona rachel = new Persona("Rachel", 20);
             Persona joseph = new Persona("Joseph", 25);
-            Persona[] personas = { jeniel, dioselina, gadiel, carmen, rachel, joseph };
+            Persona[] personas = { jeniel, dioselina, gadiel, carmen, rachel, joseph, };
 
             int longitudNombre = personas.Max(persona => persona.nombre.Length);
             int longitudSeparador = longitudNombre + 12;
@@ -322,3 +322,10 @@ namespace Pitagoras
         }
     }
 }
+
+/*
+ 
+    Hacer un programa que recoja la información de clientes, registre una factura con su fecha
+    y su monto total, agregar el detalle de las facturas. Y posteriormente consultar.
+ 
+ */
