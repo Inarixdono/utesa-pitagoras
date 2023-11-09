@@ -321,8 +321,10 @@ namespace Pitagoras
         static void Main(string[] args)
         {
             //Menu();
-            Cliente cliente = new Cliente(1, "Jeniel", "809-555-5565");
-            Console.WriteLine(cliente.telefono);
+            Animal vaca = new Animal("Vaca");
+            Perro chispita = new Perro("Chispita");
+            chispita.Sonido();
+            vaca.Sonido();
             WaitForUser();
         }
     }
