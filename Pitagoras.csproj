@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="LICENCE" />
+    <None Remove="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Yolk\Yolk.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using Yolk;
 
 namespace Pitagoras
 {
@@ -21,7 +22,8 @@ namespace Pitagoras
                     {
                         Console.WriteLine("La edad no puede ser negativa");
                         Edad = 0;
-                    } else
+                    } 
+                    else
                     {
                         Edad = value;
                     }
@@ -92,7 +94,7 @@ namespace Pitagoras
 
             Console.WriteLine("Operadores aritméticos");
             Console.WriteLine($"Valor 1: {valor1}, valor 2: {valor2}");
-            Console.WriteLine($"Suma: {valor1 + valor2}");
+            Console.WriteLine($"Suma: {Calcular.Sumar(valor1, valor2)}");
             Console.WriteLine($"Resta: {valor1 - valor2}");
             Console.WriteLine($"Multiplicación: {valor1 * valor2}");
 
@@ -318,7 +320,10 @@ namespace Pitagoras
 
         static void Main(string[] args)
         {
-            Menu();
+            //Menu();
+            Cliente cliente = new Cliente(1, "Jeniel", "809-555-5565");
+            Console.WriteLine(cliente.telefono);
+            WaitForUser();
         }
     }
 }
