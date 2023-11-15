@@ -3,9 +3,9 @@ using Yolk;
 
 namespace Pitagoras
 {
-
     class Program
     {
+        #region Semana del 18 de septiembre al 5 de noviembre
         class Persona
         {
             public string nombre;
@@ -250,6 +250,49 @@ namespace Pitagoras
 
             WaitForUser();
         }
+        #endregion
+
+        #region Semana del 6 al 19 de noviembre
+        static void ejemploInterface()
+        {
+            // Changing the class that sender recieves as a parameter
+            // changes the kind of message that it sends.
+            var messegeType = MessagesSenderFactory.GetMessagesSender("emailsss");
+            Sender sender = new Sender(messegeType);
+            Console.WriteLine("Ejemplo de interfaces...\n");
+            sender.SendMessage("Hola, mundo");
+            WaitForUser();
+        }
+
+        static void ejemploAnonimos()
+        {
+            // Anonymous types doesn't have a assigned type as int, string or a class.
+            // dynamic allows to store any type of data but it takes more memory.
+
+            var persona = new { nombre = "Jeniel", edad = 22 };
+            var persona2 = new { nombre = "Dioselina", edad = 20 };
+            List<dynamic> dynamics = new List<dynamic> { persona, persona2};
+            Console.WriteLine("Ejemplo de tipos anónimos...\n");
+
+            foreach (dynamic item in dynamics)
+            {
+                Console.WriteLine($"Nombre: {item.nombre}, Edad: {item.edad}");
+            }
+            WaitForUser();
+        }
+
+        static void ejemploMetodoGenerico()
+        {
+            string xml_cliente = GenericMethods.Serializer<Cliente>(new Cliente("Jeniel", "809-121-2132", 1));
+            string xml_item = GenericMethods.Serializer<Item>(new Item(1, "Coca Cola", 50));
+
+            Console.WriteLine("Ejemplo de métodos genéricos...\n");
+            Console.WriteLine(xml_cliente);
+            Console.WriteLine(xml_item);
+            WaitForUser();
+        }
+        #endregion
+
         static void Menu()
         {
             int opcion;
@@ -261,6 +304,9 @@ namespace Pitagoras
                           "6. Ejemplo ForEach\n" +
                           "7. Ejemplo While\n" +
                           "8. Ejemplo Try Catch\n" +
+                          "9. Ejemplo Interface\n" +
+                          "10. Ejemplo Tipos Anónimos\n" +
+                          "11. Ejemplo Métodos Genéricos\n" +
                           "0. Salir\n";
 
             do 
@@ -304,6 +350,18 @@ namespace Pitagoras
                         EjemploTryCatch();
                         break;
 
+                    case 9:
+                        ejemploInterface();
+                        break;
+
+                    case 10:
+                        ejemploAnonimos();
+                        break;
+
+                    case 11:
+                        ejemploMetodoGenerico();
+                        break;
+
                     case 0:
                         Console.WriteLine("Saliendo del programa...");
                         WaitForUser();
@@ -320,12 +378,7 @@ namespace Pitagoras
 
         static void Main(string[] args)
         {
-            //Menu();
-            Animal vaca = new Animal("Vaca");
-            Perro chispita = new Perro("Chispita");
-            chispita.Sonido();
-            vaca.Sonido();
-            WaitForUser();
+            Menu();
         }
     }
 }
